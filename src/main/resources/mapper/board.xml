@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tenco.blog.repository.interfaces.BoardRepository">
+
+
+	<insert id="insert">
+	insert into board(title, content, user) 
+	values( #{title}, #{content}, #{user} )
+	</insert>
+	
+	<update id="updateById">
+	update board set title = #{title},
+				 content = #{content},
+				 user = #{user}
+				 where id = #{id}
+	</update>
+
+	<delete id="deleteById">
+	delete from board where id = #{id}
+	</delete>
+
+	<select id="viewBoard" resultType="com.tenco.blog.repository.model.Board">
+	select * from board
+	</select>
+
+
+
+
+
+
+
+
+
+</mapper>
